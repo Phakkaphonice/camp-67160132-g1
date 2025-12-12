@@ -1,21 +1,8 @@
-<!-- file : resources/views/html101.blade.php -->
- <!DOCTYPE html>
- <html>
-    <head>
-        <title>ส่วนหัว HTML</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: "Sarabun", sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <div class=" container mt-3">
-            <h1>Workshop #HTML - FORM</h1>
+@extends('template.default')
+@section('content')
+
+<h2 class="row mt-5 col-sm-12 " >Workshop #HTML - FORM</h2>
+
             <form>
                 <div class="row mt-5">
                     <div class="col-sm-12 col-md-4">
@@ -23,6 +10,12 @@
                     </div>
                     <div class="col">
                         <input id="fname" class="form-control">
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                        </div>
+                        <div class="invalid-feedback">
+                            โปรดระบุชื่อ
+                        </div>
                     </div>
                 </div>
             </form>
@@ -71,7 +64,7 @@
 
                         <input type="radio" id="woman" name="sex" value="Woman">
                         <label for="sex">หญิง</label>
-                        
+
                         <input type="radio" id="lgbt" name="sex" value="LGBT">
                         <label for="sex">ไม่ระบุ</label>
                     </div>
@@ -106,13 +99,12 @@
                         <label for="color">สีที่ชอบ</label>
                     </div>
                     <div class="col">
-                        <select class="form-select">
+                        <select class="form-select" cla>
                         <option value="red">เเดง</option>
                         <option value="blue">น้ำเงิน</option>
                         <option value="black">ดำ</option>
                         <option value="while">ขาว</option>
                         </select>
-
                     </div>
                 </div>
             </form>
@@ -128,7 +120,7 @@
 
                         <input type="radio" id="mysong2" name="music" value="1">
                         <label for="sex">ลูกทุ่ง</label>
-                        
+
                         <input type="radio" id="mysong3" name="music" value="1">
                         <label for="sex">อื่นๆ</label>
                     </div>
@@ -144,20 +136,56 @@
             <form>
                  <div class="row mt-3" >
                     <div class="col-sm-12 col-md-4">
-                        <input type="reset" value="Reset"><br>
+                        <button class="btn btn-light" type="reset">Reset</button>
                     </div>
                     <div class="col">
-                        <input type="submit" value="Submit" ><br>
+                        <button class="btn btn-success" type="button">Submit</button>
                     </div>
                 </div>
             </form>
 
-
-    
-        </div>
-    
         <style>
             h1 {color: red;}
         </style>
-    </body>
-</html>
+        <style>
+            h2 {color: gray;}
+        </style>
+
+@endsection
+
+@push('scripts')
+    <script>
+        let clickMe = function(){
+           let fname = document.getElementById('fname')
+        //    fname.value = "from ClickMe"
+        //    console.log(fname.value)
+
+          if(fname.value == ""){
+            fname.classList.remove('is-valid')
+            fname.classList.add('is-invalid')
+          } else{
+            fname.classList.remove('is-invalid')
+            fname.classList.add('is-valid')
+          }
+        }
+
+        let myfunc = (callback)=>{
+            callback("in callback")
+        }
+
+        callMe = (param)=>{
+            console.log(param)
+        }
+
+        myfunc(callMe)
+
+
+
+       let myvar1 = 1
+       let myvar2 = "1"
+       myvar2 = parseInt(myvar2)
+
+       console.log(myvar2+myvar1+"\n\n\n\nทดสอบ")
+       console.log(1=="1")
+    </script>
+@endpush
