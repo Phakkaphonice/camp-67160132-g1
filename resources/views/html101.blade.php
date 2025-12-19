@@ -19,7 +19,7 @@
                     </div>
                 </div>
 
-         
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label for="lname">นามสกุล</label>
@@ -34,9 +34,9 @@
                         </div>
                     </div>
                 </div>
-           
 
-           
+
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label for="day">วัน/เดือน/ปีเกิด</label>
@@ -51,9 +51,9 @@
                         </div>
                     </div>
                 </div>
-            
 
-         
+
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label for="age">อายุ</label>
@@ -68,9 +68,9 @@
                         </div>
                     </div>
                 </div>
-            
 
-         
+
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label for="date">เพศ</label>
@@ -79,17 +79,17 @@
                         <div class="d-flex flex-wrap gap-3">
                         <div class="form-check form-check-inline">
                         <input type="radio" id="man" name="sex" value="Man" class="form-check-input">
-                        <label class="form-check-lable" for="man">ชาย</label>
+                        <label class="form-check-label" for="man">ชาย</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                         <input type="radio" id="woman" name="sex" value="Woman" class="form-check-input" >
-                        <label class="form-check-lable" for="woman">หญิง</label>
+                        <label class="form-check-label" for="woman">หญิง</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                         <input type="radio" id="lgbt" name="sex" value="LGBT" class="form-check-input" >
-                        <label class="form-check-lable" for="lgbt">ไม่ระบุ</label>
+                        <label class="form-check-label" for="lgbt">ไม่ระบุ</label>
                         </div>
                     </div>
 
@@ -103,10 +103,10 @@
                 </div>
 
 
-          
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4 ">
-                        <label for="photo">รูป</label>
+                        <label for="myfile">รูป</label>
                     </div>
                     <div class="col ">
                         <input type="file" id="myfile" name="myfile" class="form-control">
@@ -120,7 +120,7 @@
                 </div>
 
 
-            
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label for="Map">ที่อยู่</label>
@@ -135,16 +135,16 @@
                         </div>
                     </div>
                 </div>
-          
 
-           
+
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label for="favoritecolor">สีที่ชอบ</label>
                     </div>
                     <div class="col">
                         <select id='favoritecolor'class="form-select col-sm-12 col-md- form-control">
-                        <option value="">เลือกสีที่ชอบ</option> 
+                        <option value="">เลือกสีที่ชอบ</option>
                         <option value="red">เเดง</option>
                         <option value="blue">น้ำเงิน</option>
                         <option value="black">ดำ</option>
@@ -153,28 +153,28 @@
                         <div class="invalid-feedback">โปรดระบุสีที่ชอบ</div>
                     </div>
                 </div>
-            
 
-             
+
+
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
                         <label>แนวเพลงที่ชอบ</label>
                     </div>
                     <div class="col">
                         <div class="d-flex flex-wrap gap-3">
-                             <div class="form-check form-check-inline">   
+                             <div class="form-check form-check-inline">
                             <input type="radio" id="mysong1" name="music" value="1" class="form-check-input">
                             <label class="form-check-label" for="mysong1">เพื่อชีวิต</label>
                         </div>
 
-                        <div class="form-check form-check-inline">  
+                        <div class="form-check form-check-inline">
                             <input type="radio" id="mysong2" name="music" value="2" class="form-check-input">
-                            <label class="form-check-label" for="mysong2">ลูกทุ่ง</label>
+                            <label class="form-check-label" for="mysong2">สากล</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="radio" id="mysong3" name="music" value="3" class="form-check-input">
-                            <label class="form-check-label" for="mysong3">ฮิปฮอป</label>
+                            <label class="form-check-label" for="mysong3">จี๋หอย</label>
                         </div>
                         </div>
 
@@ -182,7 +182,7 @@
                         <div class="invalid-feedback" id="music-error">โปรดเลือกแนวเพลง</div>
                     </div>
                 </div>
-            
+
                  <div class="row mt-3">
                      <div class="col-sm-12 col-md-4"><div class="form-check">
                         <input id="consent_check" type="checkbox" class="form-check-input">
@@ -192,9 +192,9 @@
                         </div>
                     </div>
                 </div>
-             
-             
-    
+
+
+
                  <div class="row mt-3" >
                     <div class="col-sm-12 col-md-4">
                         <button class="btn btn-light" type="reset">Reset</button>
@@ -206,7 +206,7 @@
             </form>
 
         <style>
-            h1 {color: while;}
+            h1 {color: white;}
         </style>
         <style>
             h2 {color: gray;}
@@ -216,7 +216,7 @@
 
 @push('scripts')
     <script>
-    
+
         let clickMe = function(){
             let fname = document.getElementById('fname')
             let lname = document.getElementById('lname')
@@ -234,10 +234,10 @@
             let musicError = document.getElementById('music-error');
             let musicSuccess = document.getElementById('music-success');
             let consent = document.getElementById('consent_check');
-            
-            
 
-        
+
+
+
 
           if(fname.value == ""){
             fname.classList.remove('is-valid')
@@ -305,7 +305,7 @@
             myfile.classList.remove('is-invalid');
             myfile.classList.add('is-valid');
         }
-        
+
         //สี
         if (favoritecolor.value == "") {
             favoritecolor.classList.remove('is-valid');
@@ -315,7 +315,7 @@
             favoritecolor.classList.add('is-valid');
         }
 
-    
+
         // เพลง
         if (isMusicChecked == null) {
             musicError.style.setProperty('display', 'block', 'important');
@@ -334,12 +334,12 @@
             consent.classList.add('is-valid');
         }
 
-        
-        
 
-        
 
-    
+
+
+
+
         let myfunc = (callback)=>{
             callback("in callback")
         }
