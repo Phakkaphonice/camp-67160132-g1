@@ -25,4 +25,23 @@ class MyController extends Controller
         return view('myview.calculate',$data);
     }
 
+    function html101(Request $req){
+         return view('template.html101');
+    }
+    
+    function show(Request $req){
+        $data = [
+            'fname' => $req->input('fname'),
+            'lname' => $req->input('lname'),
+            'day' => $req->input('day'),
+            'age' => $req->input('age'),
+            'sex' => $req->input('sex'),
+            'w3review' => $req->input('w3review'),
+            'favoritecolo' => $req->input('favoritecolo'),
+            'music' => $req->input('music'),
+        ];
+       return view('template.html101_view',$data);
+    }
+
+
 }

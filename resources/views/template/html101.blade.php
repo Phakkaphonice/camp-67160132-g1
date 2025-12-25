@@ -3,13 +3,14 @@
 
 <h2 class="row mt-5 col-sm-12 " >Workshop #HTML - FORM </h2>
 
-            <form>
+            <form action="/" method="post">
+            @csrf
                 <div class="row mt-5">
                     <div class="col-sm-12 col-md-4">
                         <label for="fname">ชื่อ</label>
                     </div>
                     <div class="col">
-                        <input id="fname" class="form-control ">
+                        <input name="fname" id="fname" class="form-control ">
                         <div class="valid-feedback">
                             ถูกต้อง
                         </div>
@@ -25,7 +26,7 @@
                         <label for="lname">นามสกุล</label>
                     </div>
                     <div class="col">
-                        <input id="lname" class="form-control" >
+                        <input name="lname" id="lname" class="form-control" >
                         <div class="valid-feedback">
                             ถูกต้อง
                         </div>
@@ -42,7 +43,7 @@
                         <label for="day">วัน/เดือน/ปีเกิด</label>
                     </div>
                     <div class="col">
-                        <input id= "day" type="date" class="form-control">
+                        <input name="day" id= "day" type="date" class="form-control">
                         <div class="valid-feedback">
                             ถูกต้อง
                         </div>
@@ -59,7 +60,7 @@
                         <label for="age">อายุ</label>
                     </div>
                     <div class="col">
-                        <input id="age" class="form-control" >
+                        <input name="age" id="age" class="form-control" >
                         <div class="valid-feedback">
                             ถูกต้อง
                         </div>
@@ -78,7 +79,7 @@
                     <div class="col">
                         <div class="d-flex flex-wrap gap-3">
                         <div class="form-check form-check-inline">
-                        <input type="radio" id="man" name="sex" value="Man" class="form-check-input">
+                        <input type="radio" id="man" name="sex" value="ผู้ชาย" class="form-check-input">
                         <label class="form-check-label" for="man">ชาย</label>
                         </div>
 
@@ -143,12 +144,12 @@
                         <label for="favoritecolor">สีที่ชอบ</label>
                     </div>
                     <div class="col">
-                        <select id='favoritecolor'class="form-select col-sm-12 col-md- form-control">
+                        <select name="favoritecolo" id='favoritecolor'class="form-select col-sm-12 col-md- form-control">
                         <option value="">เลือกสีที่ชอบ</option>
                         <option value="red">เเดง</option>
                         <option value="blue">น้ำเงิน</option>
                         <option value="black">ดำ</option>
-                        <option value="while">ขาว</option>
+                        <option value="ขาว">ขาว</option>
                         </select>
                         <div class="invalid-feedback">โปรดระบุสีที่ชอบ</div>
                     </div>
@@ -163,17 +164,17 @@
                     <div class="col">
                         <div class="d-flex flex-wrap gap-3">
                              <div class="form-check form-check-inline">
-                            <input type="radio" id="mysong1" name="music" value="1" class="form-check-input">
+                            <input type="radio" id="mysong1" name="music" value="เพื่อชีวิต" class="form-check-input">
                             <label class="form-check-label" for="mysong1">เพื่อชีวิต</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="radio" id="mysong2" name="music" value="2" class="form-check-input">
+                            <input type="radio" id="mysong2" name="music" value="สากล" class="form-check-input">
                             <label class="form-check-label" for="mysong2">สากล</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="radio" id="mysong3" name="music" value="3" class="form-check-input">
+                            <input type="radio" id="mysong3" name="music" value="จี๋หอย" class="form-check-input">
                             <label class="form-check-label" for="mysong3">จี๋หอย</label>
                         </div>
                         </div>
@@ -236,12 +237,13 @@
             let consent = document.getElementById('consent_check');
 
 
-
+            let isValid = true;
 
 
           if(fname.value == ""){
             fname.classList.remove('is-valid')
             fname.classList.add('is-invalid')
+            isValid = false;
           } else{
             fname.classList.remove('is-invalid')
             fname.classList.add('is-valid')
@@ -251,6 +253,7 @@
           if(lname.value == ""){
             lname.classList.remove('is-valid')
             lname.classList.add('is-invalid')
+            isValid = false;
           } else{
             lname.classList.remove('is-invalid')
             lname.classList.add('is-valid')
@@ -260,6 +263,7 @@
           if(day.value == ""){
             day.classList.remove('is-valid')
             day.classList.add('is-invalid')
+            isValid = false;
           } else{
             day.classList.remove('is-invalid')
             day.classList.add('is-valid')
@@ -269,6 +273,7 @@
           if(age.value == ""){
             age.classList.remove('is-valid')
             age.classList.add('is-invalid')
+            isValid = false;
           } else{
             age.classList.remove('is-invalid')
             age.classList.add('is-valid')
@@ -278,6 +283,7 @@
           if(home.value == ""){
             home.classList.remove('is-valid')
             home.classList.add('is-invalid')
+            isValid = false;
           } else{
             home.classList.remove('is-invalid')
             home.classList.add('is-valid')
@@ -288,6 +294,7 @@
         sexInputs.forEach(input => input.classList.add('is-invalid'));
         sexError.style.setProperty('display', 'block', 'important');
         sexSuccess.style.setProperty('display', 'none', 'important');
+        isValid = false;
         } else {
         sexInputs.forEach(input => {
             input.classList.remove('is-invalid');
@@ -301,6 +308,7 @@
         if (myfile.value == "") {
             myfile.classList.remove('is-valid');
             myfile.classList.add('is-invalid');
+            isValid = false;
         } else {
             myfile.classList.remove('is-invalid');
             myfile.classList.add('is-valid');
@@ -310,6 +318,7 @@
         if (favoritecolor.value == "") {
             favoritecolor.classList.remove('is-valid');
             favoritecolor.classList.add('is-invalid');
+            isValid = false;
         } else {
             favoritecolor.classList.remove('is-invalid');
             favoritecolor.classList.add('is-valid');
@@ -320,6 +329,7 @@
         if (isMusicChecked == null) {
             musicError.style.setProperty('display', 'block', 'important');
             musicSuccess.style.setProperty('display', 'none', 'important');
+            isValid = false;
         } else {
             musicError.style.setProperty('display', 'none', 'important');
             musicSuccess.style.setProperty('display', 'block', 'important');
@@ -329,14 +339,17 @@
         if (!consent.checked) {
             consent.classList.remove('is-valid');
             consent.classList.add('is-invalid');
+            isValid = false;
         } else {
             consent.classList.remove('is-invalid');
             consent.classList.add('is-valid');
         }
 
+        if (isValid==true) {
+            document.querySelector('form').submit();
+        }
 
-
-
+        
 
 
 
@@ -346,6 +359,12 @@
 
         callMe = (param)=>{
             console.log(param)
+        }
+
+        if (isValid === true) {
+            document.querySelector('form').submit();
+        } else {
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
         }
     }
 
