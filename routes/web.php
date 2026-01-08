@@ -17,3 +17,7 @@ route::post('/',[App\Http\Controllers\MyController::class,'show']);
 
 route::get('/calculate',[App\Http\Controllers\MyController::class,'inFo']);
 route::post('/calculate',[App\Http\Controllers\MyController::class,'calculate']);
+
+
+route::resource('/flights', App\Http\Controllers\FlightController::class);
+route::resource('/pokedexs', App\Http\Controllers\PokedexsController::class);
